@@ -18,9 +18,6 @@ const registerValidation = data => {
 
 const loginValidation = data => {
   const schema = Joi.object({
-    name: Joi.string()
-      .min(6)
-      .required(),
     email: Joi.string()
       .min(6)
       .required()
@@ -29,7 +26,7 @@ const loginValidation = data => {
       .min(6)
       .required()
   });
-  schema.validate(data)
+  return schema.validate(data)
 }
 
 module.exports = {

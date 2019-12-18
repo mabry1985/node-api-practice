@@ -10,9 +10,10 @@ app.use(express.json());
 app.use(cors());
 
 const postsRoute = require('./routes/post')
+const authRoute = require('./routes/auth')
 
 app.use('/posts', postsRoute)
-
+app.use('/api/user', authRoute)
 app.get('/', (req, res) => {
     res.send('We are home!');
 })
